@@ -1,0 +1,247 @@
+    1  git clone git@github.com:zuzu59/deploy-proxmox.git
+    2  source ~/deploy-proxmox/alias 
+    3  mkdir dev
+    4  cd dev
+    5  git clone git@github.com:zuzu59/l_ia_du_riche.git
+    6  cd l_ia_du_riche/
+    7  ls -al
+    8  ./install_docker.sh 
+    9  cd dev/l_ia_du_riche/
+   10  ls -al
+   11  docker compose up
+   12  wget https://raw.githubusercontent.com/open-webui/open-webui/refs/heads/main/docker-compose.gpu.yaml
+   13  docker compose --help
+   14  docker compose -f docker-compose.gpu.yaml 
+   15  docker compose -f docker-compose.gpu.yaml up 
+   16  docker compose up
+   17  ls -al
+   18  cp docker-compose.yaml toto.yaml
+   19  nano toto.yaml 
+   20  docker compose -f toto.yaml up
+   21  docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda
+   22  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   23  docker image ls
+   24  docker image rm c4140ea765a7
+   25  docker image rm c4140ea765a7 -f
+   26  docker image ls
+   27  docker image rm 46fa95338bae
+   28  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   29  docker system prune --help
+   30  docker system prune -a -f --volumes
+   31  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   32  curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+   33  curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list |     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+   34  sudo apt-get update
+   35  sudo apt-get install -y nvidia-container-toolkit
+   36  sudo nvidia-ctk runtime configure --runtime=docker
+   37  sudo systemctl restart docker
+   38  nvidia-ctk runtime configure --runtime=docker --config=$HOME/.config/docker/daemon.json
+   39  systemctl --user restart docker
+   40  sudo nvidia-ctk config --set nvidia-container-cli.no-cgroups --in-place
+   41  history 
+   42  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   43  docker ps -a
+   44  docker stop 40e624d7ed6d
+   45  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   46  docker ps -a
+   47  docker container rm 40e624d7ed6d
+   48  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   49  nano /etc/ssh/ssh_config
+   50  nano /etc/ssh/ssh_config.d/
+   51  nano /etc/ssh/ssh_config
+   52  sudo nano /etc/ssh/ssh_config
+   53  sudo systemctl restart sshd.service
+   54  sudo systemctl restart ssh.service 
+   55  cd /etc/ssh/
+   56  ls -al
+   57  nano sshd_config
+   58  sudo nano sshd_config
+   59  sudo systemctl restart sshd.service
+   60  cd dev/l_ia_du_riche/
+   61  docker ps -a
+   62  docker container rm 1b5e8386db06
+   63  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   64  sudo apt-get install -y nvidia-docker2
+   65  docker ps -a
+   66  docker container rm open-webui
+   67  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   68  nvidia-container-cli -k -d /dev/tty info
+   69  sudo docker run --rm --gpus all nvidia/cuda:11.8.0-base-ubuntu22.04 nvidia-smi
+   70  docker container rm open-webui
+   71  sudo docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   72  sudo -sE
+   73  docker container rm open-webui
+   74  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   75  reboot 
+   76  ss -nat
+   77  htop
+   78  cd dev/l_ia_du_riche/
+   79  docker compose -f docker-compose.gpu.yaml up
+   80  nano docker-compose.gpu.yaml 
+   81  docker ps -a
+   82  docker image ls
+   83  cd dev/l_ia_du_riche/
+   84  docker ps -a
+   85  history 
+   86  docker container rm open-webui
+   87  docker run -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   88  sudo ldconfig
+   89  docker run -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   90  docker container rm open-webui ; docker run -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+   91  lspci | grep -i nvidia
+   92  uname -m && cat /etc/*release
+   93  docker container rm open-webui
+   94  sudo /usr/local/cuda-X.Y/bin/cuda-uninstaller
+   95  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+   96  sudo dpkg -i cuda-keyring_1.1-1_all.deb
+   97  sudo apt-get update
+   98  sudo apt-get install cuda-toolkit
+   99  sudo apt-get install nvidia-gds
+  100  sudo reboot
+  101  htop
+  102  cd dev/l_ia_du_riche/
+  103  docker container rm open-webui ; docker run -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+  104  whereis libnvidia-ml.so.1
+  105  find / |grep libnvidia-ml.so.1
+  106  sudo find / |grep libnvidia-ml.so.1
+  107  docker container rm open-webui ; docker run -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+  108  docker run -it --rm --gpus all ubuntu nvidia-smi
+  109  ./install_docker.sh 
+  110  cd
+  111  cd deploy-proxmox/
+  112  ./update.sh 
+  113  docker run -it --rm --gpus all ubuntu nvidia-smi
+  114  docker -v
+  115  docker run -it --rm --gpus all ubuntu nvidia-smi
+  116  sudo docker run -it --rm --gpus all ubuntu nvidia-smi
+  117  docker run -it --rm ubuntu nvidia-smi
+  118  docker run -it --rm --gpus all ubuntu nvidia-smi
+  119  nano /etc/docker/daemon.json
+  120  sudo nvidia-ctk runtime configure --runtime=docker
+  121  nano /etc/docker/daemon.json
+  122  sudo systemctl restart docker
+  123  nvidia-ctk runtime configure --runtime=docker --config=$HOME/.config/docker/daemon.json
+  124  systemctl --user restart docker
+  125  sudo nano /etc/group
+  126  systemctl --user restart docker
+  127  sudo systemctl --user restart docker
+  128  nvidia-ctk runtime configure --runtime=docker --config=$HOME/.config/docker/daemon.json
+  129  cat /home/ubuntu/.config/docker/daemon.json
+  130  sudo systemctl restart docker
+  131  sudo nvidia-ctk config --set nvidia-container-cli.no-cgroups --in-place
+  132  history 
+  133  docker run -it --rm --gpus all ubuntu nvidia-smi
+  134  sudo apt remove docker-ce
+  135  sudo apt remove docker-ce-cli 
+  136  sudo apt remove docker-ce-rootless-extras 
+  137  sudo apt remove docker-buildx-plugin docker-compose-plugin 
+  138  cat deploy-proxmox/update.sh 
+  139  ~/deploy-proxmox/clean_install.sh
+  140  sudo apt install docker-ce
+  141  docker run -it --rm --gpus all ubuntu nvidia-smi
+  142  nvidia-smi
+  143  sudo apt install nvidia-utils-560
+  144  nvidia-smi
+  145  sudo apt install nvidia-driver-560
+  146  nvidia-smi
+  147  dpkg-query -W --showformat='${Package} ${Status}\n' | grep -v deinstall | awk '{ print $1 }' |     grep -E 'nvidia.*-[0-9]+$' |     xargs -r -L 1 sudo apt-mark hold
+  148  sudo apt install --fix-broken
+  149  sudo dpkg --configure -a
+  150  sudo apt install --fix-broken
+  151  # Mark unhold
+  152  dpkg-query -W --showformat='${Package} ${Status}\n' | grep -v deinstall | awk '{ print $1 }' |     grep -E 'nvidia.*-[0-9]+$' |     xargs -r -L 1 sudo apt-mark unhold
+  153  # Upgrade driver
+  154  sudo modprobe -r -f $(lsmod | grep '^nvidia' | awk '{ print $1 }')
+  155  sudo apt update && sudo apt upgrade
+  156  nvidia-smi
+  157  # Mark hold again
+  158  dpkg-query -W --showformat='${Package} ${Status}\n' | grep -v deinstall | awk '{ print $1 }' |     grep -E 'nvidia.*-[0-9]+$' |     xargs -r -L 1 sudo apt-mark hold
+  159  sudo modprobe -r -f $(lsmod | grep '^nvidia' | awk '{ print $1 }')
+  160  lsmod | grep '^nvidia'
+  161  lsmod 
+  162  lsmod | grep 'nvidia'
+  163  lsmod | grep -i 'nvidia'
+  164  sudo apt-get install linux-headers-`uname -r`
+  165  lsmod | grep -i 'nvidia'
+  166  sudo reboot 
+  167  lsmod | grep -i 'nvidia'
+  168  sudo apt install linux-generic
+  169  sudo nvidia-settings
+  170  history 
+  171  sudo apt install nvidia-driver-560
+  172  lsmod | grep -i 'nvidia'
+  173  sudo modprobe nvidia
+  174  udo apt reinstall nvidia-driver-560
+  175  sudo apt reinstall nvidia-driver-560
+  176  dpkg-query -W --showformat='${Package} ${Status}\n' | grep -v deinstall | awk '{ print $1 }' |     grep -E 'nvidia.*-[0-9]+$' |     xargs -r -L 1 sudo apt-mark unhold
+  177  sudo apt reinstall nvidia-driver-560
+  178  lsmod | grep -i 'nvidia'
+  179  sudo apt reinstall nvidia-dkms-460
+  180  sudo apt reinstall nvidia-dkms-470
+  181  lsmod | grep -i 'nvidia'
+  182  sudo apt reinstall nvidia-dkms-460
+  183  lsmod | grep -i 'nvidia'
+  184  sudo reboot
+  185  lsmod | grep -i 'nvidia'
+  186  history 
+  187  dpkg-query -W --showformat='${Package} ${Status}\n' | grep -v deinstall | awk '{ print $1 }' |     grep -E 'nvidia.*-[0-9]+$' |     xargs -r -L 1 sudo apt-mark unhold
+  188  history 
+  189  sudo apt reinstall nvidia-driver-560
+  190  lsmod | grep -i 'nvidia'
+  191  sudo apt reinstall nvidia-driver-570
+  192  history 
+  193  source ~/deploy-proxmox/alias 
+  194  zhisto 
+  195  alias 
+  196  alias zhisto='history |tail -n 150 | sed '\''s/^[0-9 ]*//'\'''
+  197  zhisto 
+  198  reset
+  199  zhisto 
+  200  sudo apt install --fix-broken
+  201  sudo dpkg --configure -a
+  202  sudo apt install --fix-broken
+  203  lsmod | grep -i 'nvidia'
+  204  sudo apt update; sudo apt upgrade ;sudo apt autoremove ;sudo apt clean
+  205  sudo apt install linux-headers-$(uname -r)
+  206  sudo apt reinstall linux-headers-$(uname -r)
+  207  nvidia-smi
+  208  sudo apt install --reinstall nvidia-driver-525
+  209  sudo apt install --reinstall nvidia-driver-560
+  210  sudo prime-select intel
+  211  sudo prime-select nvidia
+  212  sudo apt --fix-broken install
+  213  dkms status
+  214  sudo dkms remove -m nvidia/560.35.05 
+  215  dkms status
+  216  sudo dkms remove -m nvidia-fs 
+  217  sudo dkms remove -m nvidia-fs2.22.3
+  218  sudo dkms remove -m nvidia-fs/2.22.3
+  219  dkms status
+  220  sudo dkms remove -m nvidia-fs/2.22.3
+  221  dkms status
+  222* sudo dkms remove -m nvidia-fs/2.22.3, 5.15.0-126-generi
+  223  dkms status
+  224  zhisto 
+  225  sudo apt reinstall linux-headers-$(uname -r)
+  226  dkms status
+  227  sudo apt install install nvidia-driver-560
+  228  zhisto 
+  229  dpkg-query -W --showformat='${Package} ${Status}\n' | grep -v deinstall | awk '{ print $1 }' |     grep -E 'nvidia.*-[0-9]+$' |     xargs -r -L 1 sudo apt-mark unhold
+  230  history 
+  231  sudo dpkg -i cuda-keyring_1.1-1_all.deb
+  232  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+  233  sudo dpkg -i cuda-keyring_1.1-1_all.deb
+  234  sudo apt install install nvidia-driver-560
+  235  sudo apt-get update
+  236  sudo apt install install nvidia-driver-560
+  237  sudo apt-get install cuda-toolkit
+  238  cat /proc/driver/nvidia/version
+  239  cd dev/l_ia_du_riche/.git/
+  240  gst
+  241  alias 
+  242  gst
+  243  cd ..
+  244  gst
+  245  ls -alrt
+  246  gst
+  247  history > history.txt.241121.1651
