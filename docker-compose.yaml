@@ -1,7 +1,9 @@
+# zf250831.2228
+
 services:
   ollama:
     volumes:
-      - ollama:/root/.ollama
+      - ./ollama:/root/.ollama
     container_name: ollama
     pull_policy: always
     tty: true
@@ -30,5 +32,5 @@ services:
     restart: unless-stopped
 
 volumes:
-  ollama: {}
+#  ollama: {}
   open-webui: {}
