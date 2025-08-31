@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #Petit script pour installer facilement Docker et ses outils qui vont bien
-#zf210822.1928, zf241110.1455
+#zf210822.1928, zf250415.1541
 
 # source: https://doc.ubuntu-fr.org/docker
 # source: https://docs.docker.com/compose/install/#install-compose
 
 echo -e "\Installation de docker..."
 sudo apt-get update
-sudo apt-get -y install python2-minimal python3-minimal
+sudo apt-get -y install python2-minimal python3-minimal curl htop tree
 #./install_docker.sh
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 sudo usermod -aG docker $LOGNAME
@@ -19,3 +19,5 @@ sudo usermod -aG docker $LOGNAME
 #docker-compose --version
 
 echo -e "\nIMPORTANT !\n\nVous devez faire un logoff/logon pour que les modifications de groups fonctionnent !\n"
+
+
