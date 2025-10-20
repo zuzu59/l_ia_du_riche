@@ -1,10 +1,12 @@
-# zf250831.2228
+# zf250831.2228, zf251016.1120
 
 services:
   ollama:
     volumes:
       - ./ollama:/root/.ollama
     container_name: ollama
+    ports:
+      - "11434:11434"
     pull_policy: always
     tty: true
     restart: unless-stopped
@@ -19,7 +21,7 @@ services:
     image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
     container_name: open-webui
     volumes:
-      - open-webui:/app/backend/data
+      - ./open-webui:/app/backend/data
     depends_on:
       - ollama
     ports:
@@ -31,6 +33,6 @@ services:
       - host.docker.internal:host-gateway
     restart: unless-stopped
 
-volumes:
+#volumes:
 #  ollama: {}
-  open-webui: {}
+#  open-webui: {}
