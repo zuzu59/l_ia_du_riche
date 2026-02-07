@@ -1,4 +1,4 @@
-# zf250831.2228, zf251016.1120
+# zf250831.2228, zf260207.1811
 
 services:
   ollama:
@@ -11,7 +11,8 @@ services:
     tty: true
     restart: unless-stopped
     image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
-
+#    environment:
+#      - OLLAMA_CONTEXT_LENGTH=50000
   open-webui:
     build:
       context: .
