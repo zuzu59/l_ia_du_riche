@@ -1,0 +1,5 @@
+FROM qwen3-vl:8b
+
+PARAMETER num_ctx 110000
+
+
