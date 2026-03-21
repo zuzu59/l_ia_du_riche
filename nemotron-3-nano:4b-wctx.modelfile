@@ -1,0 +1,3 @@
+FROM nemotron-3-nano:4b-q8_0
+#nemotron-3-nano:4b
+PARAMETER num_ctx 256000
