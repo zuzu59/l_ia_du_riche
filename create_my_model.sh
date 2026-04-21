@@ -16,5 +16,6 @@ docker exec -it ollama ollama create qwen3.5-9b-wctx -f /root/.ollama/qwen3.5-9b
 docker exec -it ollama ollama create nemotron-3-nano:4b-wctx -f /root/.ollama/nemotron-3-nano:4b-wctx.modelfile
 docker exec -it ollama ollama create toto-wctx -f /root/.ollama/glm-4.7-flash-q4_K_M-wctx.modelfile
 docker exec -it ollama ollama create gemma4-e2b-wctx -f /root/.ollama/gemma4-e2b-wctx.modelfile
+docker exec -it ollama ollama create tutu-wctx -f /root/.ollama/gemma4-e4b-wctx.modelfile
 
 docker exec -it ollama ollama list
