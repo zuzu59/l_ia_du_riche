@@ -1,0 +1,5 @@
+FROM hf.co/khazarai/Qwen3-4B-Qwen3.6-plus-Reasoning-Distilled-GGUF:Q4_1
+
+PARAMETER num_ctx 128000
+
+
