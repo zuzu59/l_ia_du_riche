@@ -1,7 +1,7 @@
 # l_ia_du_riche
 Même chose que l'ai du pauvre mais cette fois avec un interface WEB (Open WEBUI) au lieu de ssh et possibilité de nourrir son modèle perso RAG
 
-zf241110.1122, zf251013.1751
+zf241110.1122, zf2510502.2157
 
 
 ## Utilisation
@@ -69,4 +69,30 @@ C'est tout !
 https://github.com/open-webui/open-webui
 
 https://github.com/ollama/ollama
+
+
+## Astuces
+
+### Démarrer seulement la partie serveur de Ollama
+Serveur avec kv cache à f16:
+```
+docker rm -f ollama 2>/dev/null || true && docker run -d --restart unless-stopped --name ollama -v ./ollama:/root/.ollama -p 11434:11434 --gpus all ollama/ollama:latest
+```
+
+Serveur avec compression de kv cache à q4_0 (consomme nettement moins de VRAM avec des grandes fenêtres de contextes
+```
+docker rm -f ollama 2>/dev/null || true && docker run -d --restart unless-stopped --name ollama -v ./ollama:/root/.ollama -p 11434:11434 --gpus all -e OLLAMA_FLASH_ATTENTION=1 -e OLLAMA_KV_CACHE_TYPE=q4_0 ollama/ollama:latest
+```
+
+### Bench, la question qui tue et qui montre la vraie différence d'un bon modèle
+Très peu de modèles arrivent à répondre correctement !
+```
+je suis à 100m d'une station de lavage automobiles, je veux laver ma voiture, dois-je aller à pieds ou en voiture ?
+
+je veux laver ma voiture, je suis à 100m d'une station de lavage automobiles, dois-je aller à pieds ou en voiture ?
+
+je veux laver ma voiture à une station de lavage automobiles qui se trouve à 100m, dois-je aller à pieds ou en voiture ?
+```
+
+
 
