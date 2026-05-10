@@ -1,7 +1,7 @@
 # l_ia_du_riche
 Même chose que l'ai du pauvre mais cette fois avec un interface WEB (Open WEBUI) au lieu de ssh et possibilité de nourrir son modèle perso RAG
 
-zf241110.1122, zf2510502.2157
+zf241110.1122, zf2510510.1721
 
 
 ## Utilisation
@@ -87,6 +87,8 @@ docker rm -f ollama 2>/dev/null || true && docker run -d --restart unless-stoppe
 ### Bench, la question qui tue et qui montre la vraie différence d'un bon modèle
 Très peu de modèles arrivent à répondre correctement !
 ```
+je suis, avec ma voiture, à 100m d'une station de lavage automobiles, je veux laver ma voiture, dois-je aller à pieds ou en voiture ?
+
 je suis à 100m d'une station de lavage automobiles, je veux laver ma voiture, dois-je aller à pieds ou en voiture ?
 
 je veux laver ma voiture, je suis à 100m d'une station de lavage automobiles, dois-je aller à pieds ou en voiture ?
