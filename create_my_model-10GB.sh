@@ -2,7 +2,7 @@
 
 # Petit script pour créer des nouveaux modèles avec une fenêtre de contexte propre à eux
 #
-#zf260207.2053, zf260421.1345
+#zf260207.2053, zf260510.1701
 
 read -p "Etes-vous certain de vouloir créer ces nouveaux modèles ?"
 
@@ -17,6 +17,6 @@ cp *.modelfile ./ollama
 #docker exec -it ollama ollama create z-qwen3-5-9b-256k -f /root/.ollama/qwen3.5-9b-wctx.modelfile
 docker exec -it ollama ollama create z-qwen3-5-2b-128k -f /root/.ollama/qwen3.5-2b-wctx.modelfile
 docker exec -it ollama ollama create z-gemma4-e2b-128k -f /root/.ollama/gemma4-e2b-wctx.modelfile
-#docker exec -it ollama ollama create z-gemma4-e4b-128k -f /root/.ollama/gemma4-e4b-wctx.modelfile
+docker exec -it ollama ollama create z-gemma4-e4b-64k -f /root/.ollama/gemma4-e4b-lwctx.modelfile
 
 docker exec -it ollama ollama list
