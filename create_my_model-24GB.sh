@@ -2,7 +2,7 @@
 
 # Petit script pour créer des nouveaux modèles avec une fenêtre de contexte propre à eux
 #
-#zf260207.2053, zf260502.1902
+#zf260207.2053, zf260515.1445
 
 read -p "Etes-vous certain de vouloir créer ces nouveaux modèles ?"
 
@@ -20,13 +20,14 @@ docker exec -it ollama ollama create z-qwen3-5-2b-128k -f /root/.ollama/qwen3.5-
 docker exec -it ollama ollama create z-qwen3-5-4b-128k -f /root/.ollama/qwen3.5-4b-wctx.modelfile
 docker exec -it ollama ollama create z-qwen3-5-9b-128k -f /root/.ollama/qwen3.5-9b-wctx.modelfile
 
-docker exec -it ollama ollama create z-qwen3.6-4b-plus-128k -f /root/.ollama/qwen3.6-4b-plus-wctx.modelfile
-docker exec -it ollama ollama create z-qwen3-6-27b-xk -f /root/.ollama/qwen3.6-27b-wctx.modelfile
-#docker exec -it ollama ollama create z-qwen3-6-35b-xk -f /root/.ollama/qwen3.6-35b-wctx.modelfile
+#docker exec -it ollama ollama create z-qwen3.6-4b-plus-128k -f /root/.ollama/qwen3.6-4b-plus-wctx.modelfile
+docker exec -it ollama ollama create z-qwen3-6-27b-xxk -f /root/.ollama/qwen3.6-27b-wctx.modelfile
+#docker exec -it ollama ollama create z-qwen3-6-35b-xxk -f /root/.ollama/qwen3.6-35b-wctx.modelfile
 
 docker exec -it ollama ollama create z-gemma4-e2b-128k -f /root/.ollama/gemma4-e2b-wctx.modelfile
 docker exec -it ollama ollama create z-gemma4-e4b-128k -f /root/.ollama/gemma4-e4b-wctx.modelfile
+docker exec -it ollama ollama create z-gemma4-26b-xxk -f /root/.ollama/gemma4-26b-wctx.modelfile
 
 docker exec -it ollama ollama create z-granite4-1-e3b-128k -f /root/.ollama/granite4.1-3b-wctx.modelfile
 
-docker exec -it ollama ollama list
+docker exec -i ollama ollama list | sort
