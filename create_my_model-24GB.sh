@@ -22,7 +22,7 @@ docker exec -it ollama ollama create z-qwen3-5-9b-128k -f /root/.ollama/qwen3.5-
 
 docker exec -it ollama ollama create z-qwen3.6-4b-plus-128k -f /root/.ollama/qwen3.6-4b-plus-wctx.modelfile
 docker exec -it ollama ollama create z-qwen3-6-27b-xk -f /root/.ollama/qwen3.6-27b-wctx.modelfile
-docker exec -it ollama ollama create z-qwen3-6-35b-xk -f /root/.ollama/qwen3.6-35b-wctx.modelfile
+#docker exec -it ollama ollama create z-qwen3-6-35b-xk -f /root/.ollama/qwen3.6-35b-wctx.modelfile
 
 docker exec -it ollama ollama create z-gemma4-e2b-128k -f /root/.ollama/gemma4-e2b-wctx.modelfile
 docker exec -it ollama ollama create z-gemma4-e4b-128k -f /root/.ollama/gemma4-e4b-wctx.modelfile
