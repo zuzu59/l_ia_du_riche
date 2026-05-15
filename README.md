@@ -1,7 +1,7 @@
 # l_ia_du_riche
 Même chose que l'ai du pauvre mais cette fois avec un interface WEB (Open WEBUI) au lieu de ssh et possibilité de nourrir son modèle perso RAG
 
-zf241110.1122, zf2510515.1200
+zf241110.1122, zf2510515.1450
 
 
 ## Utilisation
@@ -37,11 +37,16 @@ update_ollama_open_webui-gpu.sh
 update_models.sh
 ```
 
-
 ### Pour tout effacer
 ```
 make remove
 ```
+
+### Pour effacer seulement les modèles z-*
+```
+ollama list | grep '^z-' | awk '{print $1}' | xargs -I {} ollama rm {}
+```
+
 
 ## ATTENTION
 Open WEBUI a un TRES GROS défaut quand il utilise Ollama, il génère des requêtes asynchrones en // ce qui fait que le CPU 
