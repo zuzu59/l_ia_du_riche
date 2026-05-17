@@ -2,18 +2,16 @@
 FROM mannix/gemma4-98e:IQ3_M
 
 # --- OPTIMISATION CRITIQUE DE LA VRAM ---
-# Bride obligatoire de la mémoire à 8k jetons. 
-# Au-delà, le cache KV va saturer vos 11 GB de VRAM et provoquer un crash (OOM).
-PARAMETER num_ctx 20000
+PARAMETER num_ctx 50000
 
 # --- PARAMÈTRES OFFICIELS GEMMA 4 POUR LE RAISONNEMENT ---
 # Recommandés par Google pour ne pas casser le "Thinking Mode"
-PARAMETER temperature 1.0
+PARAMETER temperature 0.7
 PARAMETER top_p 0.95
 PARAMETER top_k 64
 
 # Force l'IA à changer de mots si elle commence à bégayer
-PARAMETER repeat_penalty 1.5
+PARAMETER repeat_penalty 1.1
 PARAMETER repeat_last_n 128
 PARAMETER frequency_penalty 0.8
 
