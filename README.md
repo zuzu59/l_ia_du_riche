@@ -1,7 +1,7 @@
 # l_ia_du_riche
 Même chose que l'ai du pauvre mais cette fois avec un interface WEB (Open WEBUI) au lieu de ssh et possibilité de nourrir son modèle perso RAG
 
-zf241110.1122, zf2510516.1634
+zf241110.1122, zf2510516.1655
 
 
 ## Utilisation
@@ -109,6 +109,8 @@ Je suis au volant de ma voiture sale, à exactement 100m d'un lave-auto automati
 Je veux laver ma voiture dans un lave-auto automatique (type tunnel) qui se trouve à 100m, dois-je aller à pieds ou en voiture ? réponse en anglais
 
 I want to wash my car at an automatic car wash (tunnel type) that's 100m away. Should I walk or drive? (Answer in English)
+
+écrit un script en python pi.py pour calculer les 1'000 décimales de pi et les affiche par blocs de 100
 
 ```
 

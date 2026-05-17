@@ -2,7 +2,7 @@
 FROM mannix/gemma4-98e:IQ3_M
 
 # --- OPTIMISATION CRITIQUE DE LA VRAM ---
-PARAMETER num_ctx 50000
+PARAMETER num_ctx 40000
 
 # --- PARAMÈTRES OFFICIELS GEMMA 4 POUR LE RAISONNEMENT ---
 # Recommandés par Google pour ne pas casser le "Thinking Mode"
@@ -20,10 +20,6 @@ PARAMETER frequency_penalty 0.8
 SYSTEM """
 
 You are an advanced autonomous coding agent running inside Hermes Agent.
-
-#[CRITICAL REAL-WORLD LOGIC RULE]
-#Before evaluating options or generating tool calls, you must first simulate the physical world. 
-#Use your internal thinking tokens to validate this logic step-by-step.
 
 """
 
