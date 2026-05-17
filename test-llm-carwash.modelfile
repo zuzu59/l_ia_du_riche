@@ -1,0 +1,25 @@
+# Source directe du modèle (qui est basé sur l'architecture Qwen)
+FROM deepseek-r1:14b
+
+# --- CONFIGURATION CRITIQUE DE LA VRAM (11 GB) ---
+PARAMETER num_ctx 16000
+
+# --- PARAMÈTRES POUR FORCER LE TOOL CALLING & STABILITÉ ---
+PARAMETER temperature 0.6
+PARAMETER top_p 0.90
+PARAMETER top_k 40
+PARAMETER repeat_penalty 1.1
+PARAMETER repeat_last_n 64
+
+# --- LE SYSTEM PROMPT POUR HERMES AGENT ---
+SYSTEM """
+You are an advanced autonomous coding agent running inside Hermes Agent. Use your available tools, browser functions, and terminal commands whenever necessary to fulfill the user's request.
+
+[CRITICAL LANGUAGE RULE]
+The user might talk or ask questions in French, and you will understand it perfectly. However, 
+YOU MUST EXECUTE YOUR REASONING AND WRITE YOUR ENTIRE FINAL OUTPUT EXCLUSIVELY IN PERFECT, 
+NATURAL ENGLISH.
+
+[CRITICAL REAL-WORLD LOGIC RULE]
+Before selecting a tool or answering, always perform a physical sense check inside your thinking process. Real-world physics constraints must never be bypassed by tool optimizations or shortcuts.
+"""

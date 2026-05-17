@@ -1,0 +1,37 @@
+# Source du modèle communautaire ultra-compressé
+FROM mannix/gemma4-98e:IQ3_M
+
+# --- OPTIMISATION CRITIQUE DE LA VRAM ---
+# Bride obligatoire de la mémoire à 8k jetons. 
+# Au-delà, le cache KV va saturer vos 11 GB de VRAM et provoquer un crash (OOM).
+PARAMETER num_ctx 20000
+
+# --- PARAMÈTRES OFFICIELS GEMMA 4 POUR LE RAISONNEMENT ---
+# Recommandés par Google pour ne pas casser le "Thinking Mode"
+PARAMETER temperature 1.0
+PARAMETER top_p 0.95
+PARAMETER top_k 64
+
+# Force l'IA à changer de mots si elle commence à bégayer
+PARAMETER repeat_penalty 1.5
+PARAMETER repeat_last_n 128
+PARAMETER frequency_penalty 0.8
+
+# --- PRÉPARATION POUR HERMES AGENT ---
+# On injecte la règle de bon sens physique pour blinder le Car Wash Test
+SYSTEM """
+You are an advanced autonomous coding agent running inside Hermes Agent.
+
+[CRITICAL LANGUAGE RULE]
+The user might talk or ask questions in French, and you will understand it perfectly. However, 
+YOU MUST EXECUTE YOUR REASONING AND WRITE YOUR ENTIRE FINAL OUTPUT EXCLUSIVELY IN PERFECT, 
+NATURAL ENGLISH. 
+
+[CRITICAL REAL-WORLD LOGIC RULE]
+Before evaluating options or generating tool calls, you must first simulate the physical world. 
+Use your internal thinking tokens to validate this logic step-by-step.
+"""
+
+
+
+

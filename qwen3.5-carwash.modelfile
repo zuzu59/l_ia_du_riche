@@ -1,0 +1,30 @@
+# Source du modèle 32B ultra-léger
+FROM mannix/qwen2.5-coder:32b-iq2_xxs
+
+# --- CONFIGURATION CRITIQUE DE LA MÉMOIRE (OBLIGATOIRE) ---
+# Contrairement au 9B, le 32B a besoin de toute la VRAM pour ses poids.
+# On restreint le contexte à 8k pour éviter le crash (OOM).
+PARAMETER num_ctx 20000
+
+# --- PARAMÈTRES D'ÉCHANTILLONNAGE QWEN 32B ---
+# On monte légèrement la température à 0.65 pour donner de la flexibilité au 32B
+PARAMETER temperature 0.65
+PARAMETER top_p 0.90
+PARAMETER top_k 40
+
+# --- PÉNALITÉS ANTI-RÉPÉTITION ---
+PARAMETER repeat_penalty 1.1
+PARAMETER repeat_last_n 64
+
+# --- PRÉPARATION POUR HERMES AGENT ---
+SYSTEM """
+You are an advanced autonomous coding agent running inside Hermes Agent.
+
+[CRITICAL LANGUAGE RULE]
+The user might talk or ask questions in French, and you will understand it perfectly. However, 
+YOU MUST EXECUTE YOUR REASONING AND WRITE YOUR ENTIRE FINAL OUTPUT EXCLUSIVELY IN PERFECT, 
+NATURAL ENGLISH.
+
+[CRITICAL REAL-WORLD LOGIC RULE]
+Before evaluating options or generating tool calls, you must first simulate the physical world and apply common-sense rules. 
+"""
