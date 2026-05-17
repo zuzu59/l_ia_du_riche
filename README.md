@@ -1,7 +1,7 @@
 # l_ia_du_riche
 Même chose que l'ai du pauvre mais cette fois avec un interface WEB (Open WEBUI) au lieu de ssh et possibilité de nourrir son modèle perso RAG
 
-zf241110.1122, zf2510515.1450
+zf241110.1122, zf2510516.1634
 
 
 ## Utilisation
@@ -105,6 +105,11 @@ Je veux laver ma voiture dans un lave-auto automatique (type tunnel) qui se trou
 J'ai ma voiture qui est très sale et je me trouve, avec ma voiture, à 100m d'un lave-auto automatique (type tunnel), je veux  laver ma voiture, dois-je marcher à pieds ou aller avec ma voiture pour laver dans le lave-auto ?
 
 Je suis au volant de ma voiture sale, à exactement 100m d'un lave-auto automatique. Explique-moi pourquoi il est obligatoire de parcourir ces 100 mètres au volant du véhicule plutôt qu'à pied pour effectuer le lavage
+
+Je veux laver ma voiture dans un lave-auto automatique (type tunnel) qui se trouve à 100m, dois-je aller à pieds ou en voiture ? réponse en anglais
+
+I want to wash my car at an automatic car wash (tunnel type) that's 100m away. Should I walk or drive? (Answer in English)
+
 ```
 
 
